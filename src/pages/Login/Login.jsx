@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -23,7 +24,7 @@ const Login = () => {
                             <input type="text" placeholder="password" className="input input-bordered rounded-none" />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                <a href="#" className="label-text-alt link link-hover">Don't have an Account? Register</a>
+                                <Link to='/register' className="label-text-alt link link-hover">Don't have an Account? Register</Link>
                             </label>
                         </div>
                         <div className="form-control gap-4 mt-6">
