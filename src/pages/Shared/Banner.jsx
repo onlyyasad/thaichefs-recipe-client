@@ -15,8 +15,8 @@ const Banner = () => {
                 <img src={sixth} className="max-w-sm rounded-lg shadow-2xl" />
 
                 <div className='lg:w-1/2'>
-                    <h1 className="text-5xl font-serif font-bold">Learn cooking with our Master Chef's!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <h1 className="text-5xl font-serif font-bold">Authentic Thai Recipes from 6 Top Chefs</h1>
+                    <p className="py-6">Indulge in authentic Thai recipes from 6 top chefs. From fragrant soups to fiery curries, our carefully crafted dishes are a tribute to Thailand's rich culinary heritage. With easy-to-follow instructions, you can create the perfect Thai meal whether you're a novice cook or an experienced chef. Let's explore the tantalizing flavors of Thailand together!</p>
                     <button className="btn btn-primary">Get Started</button>
                 </div>
             </div>
