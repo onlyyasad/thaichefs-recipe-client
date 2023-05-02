@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -24,8 +25,11 @@ const Header = () => {
                     <li><a>Blog</a></li>
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn">Login</a>
+            <div className="navbar-end gap-2">
+
+                <FaUser className='w-12 h-12 rounded-full bg-gray-100 p-2' />
+
+                <Link to='/login' className="btn rounded-none px-6 normal-case">Login</Link>
             </div>
         </div>
     );

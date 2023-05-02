@@ -17,16 +17,6 @@ const Footer = () => {
                             </button>
                         </div>
                     </div>
-                    <div>
-                        <h2 className='font-bold text-2xl my-4'>Follow Us</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora consequuntur asperiores blanditiis beatae</p>
-                        <div className='flex gap-4 mt-4'>
-                            <Link><FaFacebookF /></Link>
-                            <Link><FaTwitter /></Link>
-                            <Link><FaInstagram /></Link>
-                            <Link><FaPinterest /></Link>
-                        </div>
-                    </div>
                     <div className='grid grid-cols-2 gap-4'>
                         <div>
                             <h2 className='font-bold text-2xl my-4'>About Us</h2>
@@ -45,6 +35,17 @@ const Footer = () => {
                                 <li><Link>Reviews</Link> </li>
                                 <li><Link>Help & FAQs</Link> </li>
                             </ul>
+                        </div>
+
+                    </div>
+                    <div>
+                        <h2 className='font-bold text-2xl my-4'>Follow Us</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora consequuntur asperiores blanditiis beatae</p>
+                        <div className='flex gap-4 mt-4'>
+                            <Link><FaFacebookF /></Link>
+                            <Link><FaTwitter /></Link>
+                            <Link><FaInstagram /></Link>
+                            <Link><FaPinterest /></Link>
                         </div>
                     </div>
                 </div>
