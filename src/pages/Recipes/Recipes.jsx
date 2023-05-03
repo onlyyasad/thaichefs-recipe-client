@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefsBanner from './ChefsBanner';
 import RecipeCard from './RecipeCard';
+import { SyncLoader } from 'react-spinners';
 
 const Recipes = () => {
     const [chefs, setChefs] = useState([]);
@@ -30,7 +31,7 @@ const Recipes = () => {
     }, [chefs])
 
     if (loading) {
-        return <p>Loading....</p>
+        return <div className='h-screen flex justify-center items-center'><SyncLoader color="#134E4A" /></div>
     }
 
     return (
