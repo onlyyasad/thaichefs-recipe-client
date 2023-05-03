@@ -6,12 +6,16 @@ import { SyncLoader } from 'react-spinners';
 
 const Main = () => {
     const [loading, setLoading] = useState(true);
-    setTimeout(() =>{
+    setTimeout(() => {
         setLoading(false)
     }, 1000)
 
-    if(loading){
-        return <div className='h-screen flex justify-center items-center'><SyncLoader color="#134E4A" /></div>
+    if (loading) {
+        return <div>
+            <Header></Header>
+            <div className='h-screen flex justify-center items-center'><SyncLoader color="#134E4A" /></div>
+            <Footer></Footer>
+        </div>
     }
     return (
         <div>

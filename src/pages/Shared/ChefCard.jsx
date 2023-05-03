@@ -7,7 +7,7 @@ const ChefCard = ({ chef }) => {
         <div className="card rounded-none w-full bg-base-100 border">
             <figure className='pt-4 bg-gray-100'><img className='max-h-64' src={image_url} alt="chef" /></figure>
             <div className="card-body">
-                <h2 className="card-title font-serif">{name}</h2>
+                <h2 className="card-title font-normal font-serif">{name}</h2>
                 <p>{years_of_experience} Years of Experience</p>
                 <div className='flex justify-between'>
                     <p>Recipes: {num_of_recipes}</p>
