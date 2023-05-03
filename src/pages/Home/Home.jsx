@@ -1,8 +1,9 @@
 import React from 'react';
-import Banner from '../Shared/Banner';
+import Banner from './Banner';
 import { useLoaderData } from 'react-router-dom';
-import Chefs from '../Shared/Chefs';
-import WhyLearn from '../Shared/WhyLearn';
+import Chefs from './Chefs';
+import WhyLearn from './WhyLearn';
+import LatestRecipes from './LatestRecipes';
 
 const Home = () => {
     const chefs = useLoaderData();
@@ -10,6 +11,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Chefs chefs={chefs}></Chefs>
+            <LatestRecipes></LatestRecipes>
             <WhyLearn></WhyLearn>
         </div>
     );

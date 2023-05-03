@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const ActiveLink = ({ to, children }) => {
     return (
-        <NavLink to={to} className={({ isActive }) => isActive ? "text-red-600" : ""} >
+        <NavLink to={to} className={({ isActive }) => isActive ? "underline underline-offset-8 duration-500" : ""} >
             {children}
         </NavLink>
     );

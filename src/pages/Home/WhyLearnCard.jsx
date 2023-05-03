@@ -7,7 +7,7 @@ const WhyLearnCard = ({title, info, children}) => {
                 {children}
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title font-normal text-teal-950 font-serif">{title}</h2>
+                <h2 className="card-title mb-8 font-normal text-teal-950 font-serif">{title}</h2>
                 <p>{info}</p>
             </div>
         </div>

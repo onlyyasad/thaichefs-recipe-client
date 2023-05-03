@@ -14,7 +14,7 @@ const ChefCard = ({ chef }) => {
                     <p>Likes: {likes}</p>
                 </div>
                 <div className="card-actions ">
-                <Link to={`/chefs/${id}`}><button className="btn w-full btn-primary">View Recipes</button></Link>
+                <Link to={`/chefs/${id}`}><button className='font-serif inline-flex items-center text-center border border-teal-950  hover:bg-teal-950 hover:text-white py-2 px-4 duration-500 text-teal-950'>View Recipes</button></Link>
                 </div>
             </div>
         </div>
