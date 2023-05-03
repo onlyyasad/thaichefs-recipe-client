@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
-    const {loginUser, googleLogin} = useContext(AuthContext);
+    const {loginUser, googleLogin, gitHubLogin} = useContext(AuthContext);
     const [error, setError] = useState("");
 
     const location = useLocation();
@@ -28,6 +28,14 @@ const Login = () => {
 
     const handleGoogleLogin = () =>{
         googleLogin()
+        .then(result =>{
+            const user = result.user;
+            navigate(from, {replace: true});
+        })
+        .catch(error => console.log(error.message))
+    }
+    const handleGitHubLogin = () =>{
+        gitHubLogin()
         .then(result =>{
             const user = result.user;
             navigate(from, {replace: true});
@@ -66,7 +74,7 @@ const Login = () => {
                             <button type='submit' className="btn rounded-none normal-case">Login</button>
                             <div className='flex flex-col lg:flex-row justify-between'>
                                 <button onClick={handleGoogleLogin} className="border px-2 py-2 font-semibold normal-case flex justify-center items-center gap-2"><FaGoogle /> Sign In with Google</button>
-                                <button className="border px-2 py-2 font-semibold normal-case flex justify-center items-center gap-2"><FaGithub /> Sign In with GitHub</button>
+                                <button onClick={handleGitHubLogin} className="border px-2 py-2 font-semibold normal-case flex justify-center items-center gap-2"><FaGithub /> Sign In with GitHub</button>
                             </div>
                         </div>
                     </form>
