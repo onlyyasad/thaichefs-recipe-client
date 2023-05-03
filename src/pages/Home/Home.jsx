@@ -5,7 +5,6 @@ import Chefs from '../Shared/Chefs';
 
 const Home = () => {
     const chefs = useLoaderData();
-    console.log(chefs)
     return (
         <div>
             <Banner></Banner>

@@ -22,6 +22,7 @@ const Login = () => {
             form.reset();
             navigate(from, {replace: true});
             const loggedUser = result.user;
+           
         })
         .catch(error => setError(error.message))
     }

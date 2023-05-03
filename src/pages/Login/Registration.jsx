@@ -5,7 +5,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 const Registration = () => {
     const [error, setError] = useState("");
 
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUserData } = useContext(AuthContext)
 
 
     const handleRegistration = (event) => {
@@ -19,10 +19,13 @@ const Registration = () => {
         createUser(email, password)
             .then(result => {
                 form.reset();
-                const user = result.user
+                const user = result.user;
+                console.log(user)
+                updateUserData(user, name, photo)
+                    .then(() => { })
+                    .catch(error => { console.log(error.message) })
             })
-            .catch(error => setError(error.message))
-
+            .catch(error => setError(error.message));
     }
 
     return (
@@ -60,7 +63,7 @@ const Registration = () => {
                                 <Link to='/login' className="label-text-alt link link-hover">Already have an account? Login</Link>
                             </label>
                         </div>
-                        
+
                         <div className="form-control gap-4 mt-6">
                             <button type='submit' className="btn rounded-none normal-case">Register</button>
                         </div>

@@ -4,7 +4,15 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Header = () => {
-    const {user, logOutUser} = useContext(AuthContext);
+    const { user, logOutUser } = useContext(AuthContext);
+    console.log(user?.photoURL)
+
+    if (user) {
+        const displayName = user.displayName;
+        const email = user.email;
+        const photoURL = user.photoURL;
+    }
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -28,11 +36,14 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-2">
-                {user? <>
-                    <FaUser className='w-12 h-12 rounded-full bg-gray-100 p-2' />
+                {user ? <>
+
+                    <div className='bg-gray-100 rounded-full p-1 '>
+                        {user.photoURL? <img className='w-12 h-12 rounded-full' src={user.photoURL} alt="" title={user?.displayName} /> :<FaUser className='w-12 h-12 rounded-full' title={user?.displayName} />}
+                    </div>
                     <button onClick={() => logOutUser()} className="btn rounded-none px-6 normal-case">Logout</button>
                 </> :
-                <Link to='/login' className="btn rounded-none px-6 normal-case">Login</Link>}
+                    <Link to='/login' className="btn rounded-none px-6 normal-case">Login</Link>}
             </div>
         </div>
     );
