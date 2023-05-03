@@ -1,40 +1,75 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
+    const {loginUser, googleLogin} = useContext(AuthContext);
+    const [error, setError] = useState("");
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/";
+
+    const handleLoginWithEmailPassword = event =>{
+        event.preventDefault();
+        setError("")
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        loginUser(email, password)
+        .then(result => {
+            form.reset();
+            navigate(from, {replace: true});
+            const loggedUser = result.user;
+        })
+        .catch(error => setError(error.message))
+    }
+
+    const handleGoogleLogin = () =>{
+        googleLogin()
+        .then(result =>{
+            const user = result.user;
+            navigate(from, {replace: true});
+        })
+        .catch(error => console.log(error.message))
+    }
+
     return (
-        <div className="min-h-screen flex justify-center items-center bg-base-200">
+        <div className="min-h-screen py-8 flex justify-center items-center bg-base-200">
             <div className="flex flex-col w-[33%] gap-4">
                 <div className="text-center w-full">
                     <h1 className="text-4xl mb-4 text-center font-bold">Login now!</h1>
                 </div>
                 <div className="card rounded-none  w-full  bg-base-100">
-                    <div className="card-body">
+                    <form onSubmit={handleLoginWithEmailPassword} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="text" placeholder="email" className="input input-bordered rounded-none" />
+                            <input type="email" name='email' required placeholder="email" className="input input-bordered rounded-none" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" placeholder="password" className="input input-bordered rounded-none" />
+                            <input type="password" name='password' required placeholder="password" className="input input-bordered rounded-none" />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 <Link to='/register' className="label-text-alt link link-hover">Don't have an Account? Register</Link>
                             </label>
                         </div>
+                        {error && <label className="label">
+                            <p className='label-text-alt text-red-600'>{error}</p>
+                        </label>}
                         <div className="form-control gap-4 mt-6">
-                            <button className="btn rounded-none normal-case">Login</button>
+                            <button type='submit' className="btn rounded-none normal-case">Login</button>
                             <div className='flex flex-col lg:flex-row justify-between'>
-                                <button className="border px-2 py-2 font-semibold normal-case flex justify-center items-center gap-2"><FaGoogle/> Sign In with Google</button>
+                                <button onClick={handleGoogleLogin} className="border px-2 py-2 font-semibold normal-case flex justify-center items-center gap-2"><FaGoogle /> Sign In with Google</button>
                                 <button className="border px-2 py-2 font-semibold normal-case flex justify-center items-center gap-2"><FaGithub /> Sign In with GitHub</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

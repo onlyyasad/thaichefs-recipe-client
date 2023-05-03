@@ -8,6 +8,7 @@ import Recipes from "../pages/Recipes/Recipes";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Login/Registration";
 import ErrorPage from "../pages/Error/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
   const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ import ErrorPage from "../pages/Error/ErrorPage";
         },
         {
             path: "chefs/:id",
-            element: <Recipes></Recipes>,
+            element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
             loader: ({params}) => fetch(`https://assignment-10-server-onlyyasad.vercel.app/chefs/${params.id}`)
         },
         {
