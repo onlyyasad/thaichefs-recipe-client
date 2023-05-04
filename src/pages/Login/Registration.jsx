@@ -30,9 +30,9 @@ const Registration = () => {
 
     return (
         <div className="min-h-screen py-8 flex justify-center items-center bg-base-200">
-            <div className="flex flex-col w-[33%] gap-4">
+            <div className="flex flex-col lg:w-[33%] gap-4">
                 <div className="text-center w-full">
-                    <h1 className="text-4xl mb-4 text-center font-bold">Create an Account!</h1>
+                    <h1 className="text-4xl mb-4 text-center text-teal-950 font-serif">Create an Account!</h1>
                 </div>
                 <div className="card rounded-none w-full bg-base-100">
                     <form onSubmit={handleRegistration} className="card-body">
@@ -65,7 +65,7 @@ const Registration = () => {
                         </div>
 
                         <div className="form-control gap-4 mt-6">
-                            <button type='submit' className="btn rounded-none normal-case">Register</button>
+                            <button type='submit' className="font-serif text-center border border-teal-950  hover:bg-teal-950 hover:text-white py-2 px-4 duration-500 text-teal-950">Register</button>
                         </div>
                         {error && <label className="label">
                             <p className='label-text-alt text-red-600'>{error}</p>

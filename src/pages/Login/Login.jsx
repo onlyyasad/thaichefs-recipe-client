@@ -46,9 +46,9 @@ const Login = () => {
 
     return (
         <div className="min-h-screen py-8 flex justify-center items-center bg-base-200">
-            <div className="flex flex-col w-[33%] gap-4">
+            <div className="flex flex-col lg:w-[33%] gap-4">
                 <div className="text-center w-full">
-                    <h1 className="text-4xl mb-4 text-center font-bold">Login now!</h1>
+                    <h1 className="text-4xl text-teal-950 mb-4 text-center font-serif">Login now!</h1>
                 </div>
                 <div className="card rounded-none  w-full  bg-base-100">
                     <form onSubmit={handleLoginWithEmailPassword} className="card-body">
@@ -63,7 +63,7 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='password' required placeholder="password" className="input input-bordered rounded-none" />
-                            <label className="label">
+                            <label className="label gap-3">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 <Link to='/register' className="label-text-alt link link-hover">Don't have an Account? Register</Link>
                             </label>
@@ -72,8 +72,8 @@ const Login = () => {
                             <p className='label-text-alt text-red-600'>{error}</p>
                         </label>}
                         <div className="form-control gap-4 mt-6">
-                            <button type='submit' className="btn rounded-none normal-case">Login</button>
-                            <div className='flex flex-col lg:flex-row justify-between'>
+                            <button type='submit' className="font-serif text-center border border-teal-950  hover:bg-teal-950 hover:text-white py-2 px-4 duration-500 text-teal-950">Login</button>
+                            <div className='flex flex-col gap-3 lg:flex-row justify-between'>
                                 <button onClick={handleGoogleLogin} className="border px-2 py-2 font-semibold normal-case flex justify-center items-center gap-2"><FaGoogle /> Sign In with Google</button>
                                 <button onClick={handleGitHubLogin} className="border px-2 py-2 font-semibold normal-case flex justify-center items-center gap-2"><FaGithub /> Sign In with GitHub</button>
                             </div>
