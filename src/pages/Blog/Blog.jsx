@@ -1,13 +1,28 @@
 import React from 'react';
 import faqs from '../../assets/faqs.svg'
+import ReactToPdf from "react-to-pdf";
 
 const Blog = () => {
+    const ref = React.createRef();
+    const options = {
+        orientation: 'landscape',
+        unit: 'in',
+        format: [12, 7]
+    };
     return (
-        <div className='bg-orange-50'>
+        <div className='bg-orange-50' ref={ref}>
             <div className='container py-16 lg:py-28 mx-auto '>
                 <h4 className='font-serif text-3xl mb-8 text-center text-teal-950'>Frequently Asked Questions: FAQs</h4>
-                <div className='px-4 flex flex-col lg:flex-row-reverse gap-4'>
-                    <div className='lg:w-1/2 mb-8 lg:mb-0 flex justify-center'>
+                <div className='flex justify-center items-center'>
+                    <ReactToPdf targetRef={ref} filename="blog.pdf" options={options} x={.25} y={.25} scale={1}>
+                        {({ toPdf }) => (
+                            <button className='px-6 py-2 mb-8 border border-teal-900' onClick={toPdf}>Save as PDF</button>
+                        )}
+                    </ReactToPdf>
+                </div>
+
+                <div className='px-4 flex flex-col lg:flex-row-reverse justify-center items-center gap-4'>
+                    <div className='lg:w-1/2 mb-8 lg:mb-0 flex justify-center items-center'>
                         <img className='h-80' src={faqs} alt="" />
                     </div>
                     <div className='lg:w-1/2 flex flex-col gap-4'>
