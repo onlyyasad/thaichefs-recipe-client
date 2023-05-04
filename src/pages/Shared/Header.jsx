@@ -26,6 +26,9 @@ const Header = () => {
                             <p className=''><ActiveLink to='/'>Home</ActiveLink></p>
                             <p className=''><ActiveLink to='/about'>About Us</ActiveLink></p>
                             <p className=''><ActiveLink to='/blog'>Blog</ActiveLink></p>
+                            {
+                                user && <button onClick={() => logOutUser()} className='font-serif inline-flex items-center justify-center text-center border border-teal-900  hover:bg-teal-900 hover:text-white py-2 px-4 duration-500 text-teal-950'>Logout</button>
+                            }
                         </div>
                     </div>
                     <Link to="/" className="text-teal-900 text-xl">THAI<span className=' font-serif text-3xl'>Chefs</span></Link>
@@ -39,7 +42,7 @@ const Header = () => {
                 </div>
                 <div className="navbar-end gap-2">
                     {user ? <>
-                        <button onClick={() => logOutUser()} className='font-serif inline-flex items-center text-center border border-teal-900  hover:bg-teal-900 hover:text-white py-2 px-4 duration-500 text-teal-950'>Logout</button>
+                        <button onClick={() => logOutUser()} className='font-serif hidden lg:inline-flex justify-center items-center text-center border border-teal-900  hover:bg-teal-900 hover:text-white py-2 px-4 duration-500 text-teal-950'>Logout</button>
                         <div className='bg-gray-100 rounded-full p-1 '>
                             {user.photoURL ? <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" title={user?.displayName} /> : <FaUser className='w-10 h-10 rounded-full' title={user?.displayName} />}
                         </div>

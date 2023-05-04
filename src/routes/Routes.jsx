@@ -10,6 +10,7 @@ import Registration from "../pages/Login/Registration";
 import ErrorPage from "../pages/Error/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import Blog from "../pages/Blog/Blog";
+import About from "../pages/About/About";
 
   const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ import Blog from "../pages/Blog/Blog";
             path: "/",
             element: <Home></Home>,
             loader: () => fetch('https://assignment-10-server-onlyyasad.vercel.app/chefs')
+        },
+        {
+            path: "about",
+            element: <About></About>
         },
         {
             path: "chefs/:id",
