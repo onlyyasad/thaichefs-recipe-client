@@ -6,44 +6,43 @@ import { FaArrowRight, FaHeart, FaRegHeart } from 'react-icons/fa';
 import { Toaster, toast } from 'react-hot-toast';
 
 const RecipeCard = ({ recipe }) => {
-    const [favorite, setFavorite] = useState(false);
+    const [disable, setDisable] = useState(false);
+
     const { id, chef_id, recipe_name, image_url, ingredients, cooking_method, rating } = recipe;
 
     const handleAddToFavorite = () => {
         toast.success('Added to your Favorite List');
-        setFavorite(true)
+        setDisable(true)
     }
 
-    const handleRemoveFavorite = () =>{
-        toast.success('Removed from your Favorite List');
-        setFavorite(false)
-    }
     return (
         <div className="card rounded-none w-full bg-base-100 border">
             <figure className=''><img className='' src={image_url} alt="chef" /></figure>
             <div className="card-body">
-                <h2 className="card-title font-serif">{recipe_name}</h2>
-                <p>Ingredients: {ingredients.length < 250 ? ingredients : <>{ingredients.slice(0, 250)}... </>}</p>
-                <p>Cooking Method: {cooking_method.length < 250 ? cooking_method : <>{cooking_method.slice(0, 250)}...</>}</p>
-                <div className='flex my-4 justify-between'>
+                <h2 className="text-3xl font-serif">{recipe_name}</h2>
+                <div className='my-4'>
+                    <p className='font-serif'>Ingredients</p>
+                    <hr className='my-2' />
+                    <p className='text-sm'>{ingredients.length < 2500 ? ingredients : <>{ingredients.slice(0, 250)}... </>}</p>
+                </div>
+                <div className='flex-grow'>
+                    <p className='font-serif'>Cooking Method</p>
+                    <hr className='my-2' />
+                    <p className='text-sm'>{cooking_method.length < 2500 ? cooking_method : <>{cooking_method.slice(0, 250)}...</>}</p>
+                </div>
+                <div className='flex mt-4 justify-between'>
                     <div className='flex justify-center items-center gap-1'><Rating
                         style={{ maxWidth: 100 }}
                         value={rating}
                         readOnly
                     /> {rating}
                     </div>
-                    {favorite? <button onClick={handleRemoveFavorite}>
-                        <span><FaHeart className='text-red-600' title='Remove from Favorite' /></span>
-                    </button>:
-                    <button onClick={handleAddToFavorite}>
-                        <span><FaRegHeart title='Add to Favorite' /></span>
-                    </button>}
-                </div>
-                <div className="card-actions ">
-                    <Link><button className="border flex items-center font-semibold gap-1 px-6 py-2 w-full"><span>View Full Recipe</span> <FaArrowRight /> </button></Link>
+
+                    <button onClick={handleAddToFavorite} className='flex items-center px-6 py-2 gap-1 hover:border-teal-950 duration-500 border' disabled={disable}>
+                        <FaRegHeart title='Add to Favorite' /><span>Favorite</span>
+                    </button>
                 </div>
             </div>
-            <Toaster />
         </div>
     );
 };

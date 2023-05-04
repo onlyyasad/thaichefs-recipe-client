@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import ChefsBanner from './ChefsBanner';
 import RecipeCard from './RecipeCard';
 import { SyncLoader } from 'react-spinners';
+import { Toaster } from 'react-hot-toast';
 
 const Recipes = () => {
     const [chefs, setChefs] = useState([]);
@@ -45,6 +46,7 @@ const Recipes = () => {
                     }
                 </div>
             </div>
+            <Toaster />
         </div>
     );
 };

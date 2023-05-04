@@ -28,7 +28,7 @@ const Header = () => {
                             <p className=''><ActiveLink to='/blog'>Blog</ActiveLink></p>
                         </div>
                     </div>
-                    <Link to="/" className="text-teal-950 text-xl">THAI<span className=' font-serif text-3xl'>Chef's</span></Link>
+                    <Link to="/" className="text-teal-950 text-xl">THAI<span className=' font-serif text-3xl'>Chefs</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <div className="menu menu-horizontal gap-4 px-1">

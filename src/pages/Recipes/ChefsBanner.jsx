@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { AiOutlineLike } from "react-icons/ai";
 
 const ChefsBanner = ({ chef }) => {
     console.log(chef)
@@ -13,12 +14,13 @@ const ChefsBanner = ({ chef }) => {
                     <img src={image_url} className="h-full" />
                 </div>
                 <div className='flex flex-col justify-center lg:w-1/2'>
-                    <h1 className="text-5xl font-serif font-bold">{name}</h1>
+                    <h1 className="text-5xl font-serif text-teal-950">{name}</h1>
                     <p className="py-6">{bio}</p>
-                    <div className='flex justify-between gap-4'>
-                        <p>{years_of_experience} Years of Experinece</p>
-                        <p>Recipes: {num_of_recipes}</p>
-                        <p>Likes: {likes}</p>
+                    <hr />
+                    <div className='flex mt-6 justify-between gap-4'>
+                        <p><span className='font-bold'>{years_of_experience}</span> Years of Experinece</p>
+                        <p><span className='font-bold'>{num_of_recipes}</span> Recipes</p>
+                        <p className='text-end flex items-center gap-2'><AiOutlineLike title='Likes' />{likes}</p>
                     </div>
                 </div>
             </div>
