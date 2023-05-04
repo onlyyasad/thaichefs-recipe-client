@@ -39,7 +39,7 @@ const Blog = () => {
                                 2. How to validate React props using PropTypes
                             </div>
                             <div className="collapse-content">
-                                <p>React's `PropTypes` library can be used to validate the types of props that are passed to a component. It helps ensure that the data being passed to the component is of the expected type and shape, reducing the likelihood of bugs and errors. `PropTypes` can validate types like `string`, `number`, `bool`, `array`, and `object`, among others. However, it should not be used for runtime validation or error handling, as it is only intended to provide warnings during development.</p>
+                                <p>React's PropTypes library can be used to validate the types of props that are passed to a component. It helps ensure that the data being passed to the component is of the expected type and shape, reducing the likelihood of bugs and errors. PropTypes can validate types like string, number, bool, array, and object, among others. However, it should not be used for runtime validation or error handling, as it is only intended to provide warnings during development.</p>
                             </div>
                         </div>
                         <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 ">

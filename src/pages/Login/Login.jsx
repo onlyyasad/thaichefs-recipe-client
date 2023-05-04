@@ -48,7 +48,7 @@ const Login = () => {
         <div className="min-h-screen py-8 flex justify-center items-center bg-base-200">
             <div className="flex flex-col lg:w-[33%] gap-4">
                 <div className="text-center w-full">
-                    <h1 className="text-4xl text-teal-950 mb-4 text-center font-serif">Login now!</h1>
+                    <h1 className="text-4xl text-teal-900 mb-4 text-center font-serif">Login now!</h1>
                 </div>
                 <div className="card rounded-none  w-full  bg-base-100">
                     <form onSubmit={handleLoginWithEmailPassword} className="card-body">
@@ -72,8 +72,8 @@ const Login = () => {
                             <p className='label-text-alt text-red-600'>{error}</p>
                         </label>}
                         <div className="form-control gap-4 mt-6">
-                            <button type='submit' className="font-serif text-center border border-teal-950  hover:bg-teal-950 hover:text-white py-2 px-4 duration-500 text-teal-950">Login</button>
-                            <div className='flex flex-col gap-3 lg:flex-row justify-between'>
+                            <button type='submit' className="font-serif text-center border border-teal-900  hover:bg-teal-900 hover:text-white py-2 px-4 duration-500 text-teal-950">Login</button>
+                            <div className='flex flex-col gap-3 lg:gap-2 lg:flex-row justify-between'>
                                 <button onClick={handleGoogleLogin} className="border px-2 py-2 font-semibold normal-case flex justify-center items-center gap-2"><FaGoogle /> Sign In with Google</button>
                                 <button onClick={handleGitHubLogin} className="border px-2 py-2 font-semibold normal-case flex justify-center items-center gap-2"><FaGithub /> Sign In with GitHub</button>
                             </div>

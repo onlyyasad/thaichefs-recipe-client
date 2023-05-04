@@ -15,7 +15,7 @@ const Header = () => {
     }
 
     return (
-        <div className='container mx-auto'>
+        <div className='container px-2 mx-auto'>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -28,7 +28,7 @@ const Header = () => {
                             <p className=''><ActiveLink to='/blog'>Blog</ActiveLink></p>
                         </div>
                     </div>
-                    <Link to="/" className="text-teal-950 text-xl">THAI<span className=' font-serif text-3xl'>Chefs</span></Link>
+                    <Link to="/" className="text-teal-900 text-xl">THAI<span className=' font-serif text-3xl'>Chefs</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <div className="menu menu-horizontal gap-4 px-1">
@@ -39,13 +39,12 @@ const Header = () => {
                 </div>
                 <div className="navbar-end gap-2">
                     {user ? <>
-
+                        <button onClick={() => logOutUser()} className='font-serif inline-flex items-center text-center border border-teal-900  hover:bg-teal-900 hover:text-white py-2 px-4 duration-500 text-teal-950'>Logout</button>
                         <div className='bg-gray-100 rounded-full p-1 '>
                             {user.photoURL ? <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" title={user?.displayName} /> : <FaUser className='w-10 h-10 rounded-full' title={user?.displayName} />}
                         </div>
-                        <button onClick={() => logOutUser()} className='font-serif inline-flex items-center text-center border border-teal-950  hover:bg-teal-950 hover:text-white py-2 px-4 duration-500 text-teal-950'>Logout</button>
                     </> :
-                        <Link to='/login' className='font-serif inline-flex items-center text-center border border-teal-950  hover:bg-teal-950 hover:text-white py-2 px-4 duration-500 text-teal-950'>Login</Link>}
+                        <Link to='/login' className='font-serif inline-flex items-center text-center border border-teal-900  hover:bg-teal-900 hover:text-white py-2 px-4 duration-500 text-teal-950'>Login</Link>}
                 </div>
             </div>
         </div>

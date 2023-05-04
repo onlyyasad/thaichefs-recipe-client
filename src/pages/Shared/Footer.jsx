@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='px-4 bg-gray-900'>
-            <div className='container mx-auto py-16 text-white'>
+        <div className='bg-gray-900'>
+            <div className='container px-4 mx-auto py-16 text-white'>
                 <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
                     <div>
                         <h2 className='font-serif text-2xl my-4'>Subscribe to Newsletter!</h2>

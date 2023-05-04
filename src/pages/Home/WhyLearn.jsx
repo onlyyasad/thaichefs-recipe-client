@@ -13,8 +13,8 @@ const WhyLearn = () => {
     const thirdInfo = "After successfully completing our course, we will refer you to the best restaurants in the country for your intern!"
     return (
         <div>
-            <div className='my-28'>
-                <h4 className='font-serif text-3xl text-center text-teal-950'>Why Learn with Us?</h4>
+            <div className='container px-4 mx-auto my-28'>
+                <h4 className='font-serif text-3xl text-center mb-16 text-teal-950'>Why Learn with Us?</h4>
                 <div className='grid lg:grid-cols-3'>
                     <WhyLearnCard title={firstTitle} info={firstInfo}>
                         <GiCampCookingPot className='text-7xl text-teal-950' />

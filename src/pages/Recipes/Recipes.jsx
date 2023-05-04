@@ -38,9 +38,9 @@ const Recipes = () => {
     return (
         <div className=''>
             <ChefsBanner chef={chef}></ChefsBanner>
-            <div className='my-8'>
-                <h2 className='font-serif text-3xl text-center '>Top 3 recipies of {chef?.name}</h2>
-                <div className='grid lg:grid-cols-3 gap-4 p-8'>
+            <div className='container px-4 mx-auto my-28'>
+                <h2 className='font-serif text-teal-900 mb-16 text-3xl text-center '>Top 3 recipies of {chef?.name}</h2>
+                <div className='grid lg:grid-cols-3 gap-4'>
                     {
                         recipes && recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe}></RecipeCard>)
                     }
