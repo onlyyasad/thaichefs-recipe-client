@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import Registration from "../pages/Login/Registration";
 import ErrorPage from "../pages/Error/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
+import Blog from "../pages/Blog/Blog";
 
   const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ import PrivateRoute from "./PrivateRoute";
         {
             path: "register",
             element: <Registration></Registration>
+        },
+        {
+            path: "blog",
+            element: <Blog></Blog>
         },
         {
             path: "*",
