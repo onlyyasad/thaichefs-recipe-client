@@ -3,6 +3,8 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
+// Functionality: Users can login using their email and password. Users can also login using Google and Github sign in Sign in method. After successfully login users will be redirect to either home page or to the protected page if the redirect from that page before login. Error shown for the wrong password and wrong email input.
+
 const Login = () => {
     const {loginUser, googleLogin, gitHubLogin} = useContext(AuthContext);
     const [error, setError] = useState("");

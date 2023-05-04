@@ -14,20 +14,20 @@ const WhyLearn = () => {
     return (
         <div>
             <div className='container px-4 mx-auto my-28'>
-                <h4 className='font-serif text-3xl text-center mb-16 text-teal-950'>Why Learn with Us?</h4>
+                <h4 className='font-serif text-3xl text-center mb-16 text-teal-900'>Why Learn with Us?</h4>
                 <div className='grid lg:grid-cols-3'>
                     <WhyLearnCard title={firstTitle} info={firstInfo}>
-                        <GiCampCookingPot className='text-7xl text-teal-950' />
+                        <GiCampCookingPot className='text-7xl text-teal-900' />
                     </WhyLearnCard>
                     <WhyLearnCard title={secondTitle} info={secondInfo}>
-                        <GiCook className='text-7xl text-teal-950' />
+                        <GiCook className='text-7xl text-teal-900' />
                     </WhyLearnCard>
                     <WhyLearnCard title={thirdTitle} info={thirdInfo}>
-                        <RiProfileFill className='text-7xl text-teal-950' />
+                        <RiProfileFill className='text-7xl text-teal-900' />
                     </WhyLearnCard>
                 </div>
                 <div className='flex justify-center'>
-                    <button className='font-serif inline-flex items-center text-xl text-center border border-white  hover:border-teal-950 py-2 px-4 duration-500 text-teal-950'>Book Your Session Now<IoIosArrowForward /> </button>
+                    <button className='font-serif inline-flex items-center text-xl text-center border border-white  hover:border-teal-900 py-2 px-4 duration-500 text-teal-900'>Book Your Session Now<IoIosArrowForward /> </button>
                 </div>
             </div>
         </div>

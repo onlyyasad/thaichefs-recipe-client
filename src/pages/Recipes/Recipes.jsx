@@ -14,8 +14,6 @@ const Recipes = () => {
 
     const chefId = recipes[0].chef_id;
 
-    // console.log(chefId)
-
     useEffect(() => {
         fetch('https://assignment-10-server-onlyyasad.vercel.app/chefs')
             .then(res => res.json())
@@ -28,7 +26,7 @@ const Recipes = () => {
     useEffect(() => {
         const chefData = chefs.find(chef => chef.id === chefId)
         setChef(chefData)
-        // console.log(chef)
+        
     }, [chefs])
 
     if (loading) {

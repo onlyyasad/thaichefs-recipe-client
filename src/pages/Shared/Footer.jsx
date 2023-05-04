@@ -40,7 +40,7 @@ const Footer = () => {
                     </div>
                     <div>
                         <h2 className='font-serif text-2xl my-4'>Follow Us</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora consequuntur asperiores blanditiis beatae</p>
+                        <p>Follow us on our social media handles for the latest news, updates, recipes and the best deals for you!</p>
                         <div className='flex gap-4 mt-4'>
                             <Link><FaFacebookF /></Link>
                             <Link><FaTwitter /></Link>

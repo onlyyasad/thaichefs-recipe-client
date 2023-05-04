@@ -10,6 +10,8 @@ const Main = () => {
         setLoading(false)
     }, 1000)
 
+    // Loading Spinner for initial website load 
+
     if (loading) {
         return <div className='h-screen flex justify-center items-center'><SyncLoader color="#134E4A" /></div>
     }

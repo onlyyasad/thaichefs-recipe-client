@@ -18,6 +18,7 @@ const LatestRecipes = () => {
                         </div>
                         <div className='bg-base-200 lg:w-3/4 mx-auto lg:absolute left-12 lg:-mt-12 p-4'>
                             <h2 className='text-xl text-center text-teal-900 font-serif'>How to cook Tom Yum Goong?</h2>
+                                <hr className='my-2 border border-orange-500' />
                             <div className='flex justify-between mt-2 mx-auto gap-2'>
                                 <p className='text-sm inline-flex items-center gap-2'><TbChefHat />Chef Duangporn Songvisava</p> 
                                 <p className='text-sm inline-flex items-center gap-2'><BiStopwatch />45 min</p>
@@ -30,6 +31,7 @@ const LatestRecipes = () => {
                         </div>
                         <div className='bg-base-200 lg:w-3/4 mx-auto lg:absolute left-12 lg:-mt-12 p-4'>
                             <h2 className='text-xl text-center text-teal-900 font-serif'>Make delicious Pad Thai within 25 Minutes!</h2>
+                                <hr className='my-2 border border-orange-500' />
                             <div className='flex justify-between mt-2 mx-auto gap-2'>
                                 <p className='text-sm inline-flex items-center gap-2'><TbChefHat />Chef Duangporn Songvisava</p> 
                                 <p className='text-sm inline-flex items-center gap-2'><BiStopwatch />25 min</p>
@@ -42,6 +44,7 @@ const LatestRecipes = () => {
                         </div>
                         <div className='bg-base-200 lg:w-3/4 mx-auto lg:absolute left-12 lg:-mt-12 p-4'>
                             <h2 className='text-xl text-center text-teal-900 font-serif'>Cook Green Curry like a master chef!</h2>
+                                <hr className='my-2 border border-orange-500' />
                             <div className='flex justify-between mt-2 mx-auto gap-2'>
                                 <p className='text-sm inline-flex items-center gap-2'><TbChefHat />Chef Duangporn Songvisava</p> 
                                 <p className='text-sm inline-flex items-center gap-2'><BiStopwatch />30 min</p>

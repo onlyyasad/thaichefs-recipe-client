@@ -1,12 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+
+
+// Functionality: User should enter their name, email, password and image url to register and after registration it will redirect users to the login page. Error displayed for the password length less than 6 characters and can't submit the form without name, email and password. Photo url is optional here.
 
 const Registration = () => {
     const [error, setError] = useState("");
 
-    const { createUser, updateUserData } = useContext(AuthContext)
+    const { createUser, updateUserData, logOutUser } = useContext(AuthContext);
 
+    const navigate = useNavigate();
 
     const handleRegistration = (event) => {
         event.preventDefault();
@@ -20,10 +24,13 @@ const Registration = () => {
             .then(result => {
                 form.reset();
                 const user = result.user;
-                console.log(user)
+                
                 updateUserData(user, name, photo)
                     .then(() => { })
                     .catch(error => { console.log(error.message) })
+
+                logOutUser();
+                navigate("/login")
             })
             .catch(error => setError(error.message));
     }
